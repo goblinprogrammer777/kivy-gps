@@ -1,20 +1,32 @@
+#:include screens/home/friend.kv
 <HomeScreen>:
-    MDTabs:
-        pos_hint:{"top":0.9}
-
-        Tab:
-            title: "friendlist"
-            ScrollView:
-                do_scroll_x: False
-                MDList:
-                    id:friendlist
-        Tab:
-            title: "friendrequest"
-            ScrollView:
-                do_scroll_x: False
-                MDList:
-                    id:friend_requests
     MDToolbar:
         size_hint:(1,0.1)
         pos_hint:{"top":1}
         right_action_items:[["reload", lambda x: root.load_friendlist()]]
+    MDBottomNavigation:
+        panel_color: .2, .2, .2, 1
+        MDBottomNavigationItem:
+            name: 'friendlist'
+            text: "My friends"
+            icon: "account-group"
+            ScrollView:
+                do_scroll_x: False
+                MDList:
+                    padding: "12dp"
+                    spacing: "12dp"
+                    id:friendlist
+        MDBottomNavigationItem:
+            name: "friendrequests"
+            text: "Friend requests"
+            icon: "account-arrow-down"
+            ScrollView:
+                do_scroll_x: False
+                MDList:
+                    padding: "12dp"
+                    spacing: "12dp"
+                    id: friend_requests
+        MDBottomNavigationItem:
+            name: "findfriends"
+            text: "Find friends"
+            icon: "account-search"

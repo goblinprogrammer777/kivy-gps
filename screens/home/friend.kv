@@ -1,0 +1,56 @@
+<FriendItem>:
+    size_hint_y: None
+    height: "86dp"
+    padding: "10dp"
+    spacing: '5dp'
+    radius: 12
+    elevation: 4
+
+    FitImage:
+        source: 'https://i.pravatar.cc/128'
+        radius: root.radius
+        size_hint_x: None
+        width: root.height
+
+
+    MDLabel:
+        id: name
+        text: root.name
+        font_style: 'H4'
+        adaptive_height: True
+        pos_hint: {'center_x': .2, 'center_y': .5}
+
+    IconRightWidget:
+        icon: 'location-marker-radius'
+
+    IconRightWidget:
+        icon: 'trash-can'
+
+
+<FriendReqItem>:
+    size_hint_y: None
+    height: "86dp"
+    padding: "10dp"
+    spacing: '5dp'
+    radius: 12
+    elevation: 4
+
+    FitImage:
+        source: 'https://i.pravatar.cc/128'
+        radius: root.radius
+        size_hint_x: None
+        width: root.height
+
+    MDLabel:
+        id: name
+        text: root.name
+        font_style: 'H4'
+        adaptive_height: True
+        pos_hint: {'center_x': .2, 'center_y': .5}
+
+    IconRightWidget:
+        icon: 'cancel'
+
+    IconRightWidget:
+        icon: 'check'
+        on_press: root.accept()
