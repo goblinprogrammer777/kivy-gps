@@ -1,3 +1,27 @@
+#: import AKButtonPanel kivymd_extensions.akivymd.uix
 <LocationScreen>:
-    MDLabel:
-        text: "Map"
+    MapView:
+        id: map
+        lat: 50.6394
+        lon: 3.057
+        zoom: 8
+    AKButtonPanel:
+        pos: root.width / 2 - self.width/2, root.height / 2 + dp(50)
+        icon:"plus"
+        selectable: True
+        MDIconButton:
+            icon: "minus"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 0, 1
+        MDIconButton:
+            icon: "calendar"
+            theme_text_color: "Custom"
+            text_color: 1, 0, 0, 1
+        MDIconButton:
+            icon: "android"
+            theme_text_color: "Custom"
+            text_color: 0, 1, 1, 1
+    MDToolbar:
+        size_hint:(1,0.1)
+        pos_hint:{"top":1}
+

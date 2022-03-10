@@ -11,8 +11,6 @@
         radius: root.radius
         size_hint_x: None
         width: root.height
-
-
     MDLabel:
         id: name
         text: root.name
@@ -21,7 +19,8 @@
         pos_hint: {'center_x': .2, 'center_y': .5}
 
     IconRightWidget:
-        icon: 'location-marker-radius'
+        icon: 'map-marker'
+        on_press: root.open_location()
 
     IconRightWidget:
         icon: 'trash-can'

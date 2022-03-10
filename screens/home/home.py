@@ -6,6 +6,7 @@ from kivy.uix.screenmanager import Screen
 from kivymd.uix.card import MDCard
 from kivymd.uix.behaviors import RoundedRectangularElevationBehavior
 from kivy.animation import Animation
+from kivymd.app import MDApp
 
 
 class HomeScreen(Screen):
@@ -47,6 +48,12 @@ class FriendItem(MDCard, RoundedRectangularElevationBehavior):
     id = NumericProperty()
     name = StringProperty()
 
+    def open_location(self):
+        app = MDApp.get_running_app()
+        location_screen = app.root.get_screen('location')
+        location_screen.friend_id = self.id
+        app.root.current = 'location'
+
 
 class FriendReqItem(MDCard, RoundedRectangularElevationBehavior):
     id = NumericProperty()
@@ -59,4 +66,3 @@ class FriendReqItem(MDCard, RoundedRectangularElevationBehavior):
 
     def delete_from_db(self, *args):
         self.parent.remove_widget(self)
-
